@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALTIUS AIR — частные чартерные рейсы (демо-шаблон)</title>
+  <meta name="description" content="Демо-шаблон сайта премиальной чартерной авиации: кинематографичный 3D-полёт сквозь облака на рассвете.">
+  <meta name="theme-color" content="#0B1E3B">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20fill='%23C9A24B'%20d='M30%204%202%2015l9%204%202%209%205-7%208%204z'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700&family=Golos+Text:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+          integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+          crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+          integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+          crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"
+          integrity="sha384-ClD7pCgIUz5M81HT8aZmMxCsWmfsycmBiwL5gy1pUbdWHvICIbea22N9sTtAFotA"
+          crossorigin="anonymous"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- Прелоадер -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__brand mono">ALTIUS AIR</div>
+      <div class="preloader__bar"><span id="preloader-bar"></span></div>
+      <div class="preloader__meta mono">
+        <span>ПОДГОТОВКА К ВЫЛЕТУ</span>
+        <span id="preloader-num">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D-фон -->
+  <div id="webgl" class="webgl" aria-hidden="true"></div>
+  <div class="sky-fallback" aria-hidden="true"></div>
+
+  <!-- Навигация -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#hero">ALTIUS<span> AIR</span></a>
+    <nav class="nav__links" aria-label="Основная навигация">
+      <a href="#destinations">Направления</a>
+      <a href="#fleet">Флот</a>
+      <a href="#service">Сервис</a>
+      <a href="#safety">Безопасность</a>
+    </nav>
+    <a class="btn btn--gold nav__cta" href="#request">Запросить рейс</a>
+  </header>
+
+  <!-- HUD: эшелон растёт по мере прокрутки -->
+  <aside class="hud mono" aria-hidden="true">
+    <span class="hud__label">ЭШЕЛОН</span>
+    <span class="hud__value" id="hud-fl">FL 035</span>
+  </aside>
+
+  <main id="page">
+
+    <!-- 01 · Герой: облачный рассвет -->
+    <section class="section hero" id="hero">
+      <div class="container hero__content">
+        <p class="hero__eyebrow mono" data-intro>ЧАСТНАЯ ЧАРТЕРНАЯ АВИАЦИЯ · ДЕМО-ШАБЛОН</p>
+        <h1 class="hero__title">
+          <span class="w"><span class="w__in">Летайте</span></span>
+          <span class="w"><span class="w__in">выше</span></span>
+          <span class="w"><span class="w__in w__in--gold">расписаний.</span></span>
+        </h1>
+        <p class="hero__sub" data-intro>Личный борт от 4 часов с момента запроса. Любая точка мира, полная приватность и экипаж, который знает вас по имени.</p>
+        <div class="hero__cta" data-intro>
+          <a href="#request" class="btn btn--gold">Запросить рейс</a>
+          <a href="#fleet" class="btn btn--ghost">Смотреть флот</a>
+        </div>
+      </div>
+      <div class="hero__strip mono" data-intro>
+        <span>FL 410</span><span>M 0.85</span><span>ВЫЛЕТ ОТ 04:00 Ч</span><span>40 000+ АЭРОПОРТОВ</span>
+      </div>
+      <div class="hero__scroll mono" data-intro><span class="hero__scroll-line"></span>ПРОКРУТИТЕ — НАЧИНАЕМ НАБОР ВЫСОТЫ</div>
+    </section>
+
+    <!-- 02 · Направления -->
+    <section class="section" id="destinations">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow mono">НАПРАВЛЕНИЯ</p>
+            <h2>Куда угодно.<br>Без пересадок и очередей.</h2>
+          </div>
+          <p class="section__lead">Демо-подборка популярных маршрутов из Москвы. В шаблоне карточки легко заменить на свои направления.</p>
+        </header>
+        <div class="cards cards--4" data-reveal data-reveal-group>
+          <article class="card dest">
+            <p class="dest__code mono">LFMN · 43°39′N 7°12′E</p>
+            <h3>Ницца</h3>
+            <p class="dest__meta">Лазурный Берег, Франция</p>
+            <p class="dest__time mono">≈ 3 Ч 50 МИН · ПРЯМОЙ</p>
+          </article>
+          <article class="card dest">
+            <p class="dest__code mono">OMDB · 25°15′N 55°21′E</p>
+            <h3>Дубай</h3>
+            <p class="dest__meta">ОАЭ</p>
+            <p class="dest__time mono">≈ 5 Ч 30 МИН · ПРЯМОЙ</p>
+          </article>
+          <article class="card dest">
+            <p class="dest__code mono">LSZH · 47°27′N 8°33′E</p>
+            <h3>Цюрих</h3>
+            <p class="dest__meta">Швейцария</p>
+            <p class="dest__time mono">≈ 3 Ч 10 МИН · ПРЯМОЙ</p>
+          </article>
+          <article class="card dest">
+            <p class="dest__code mono">EGGW · 51°52′N 0°22′W</p>
+            <h3>Лондон</h3>
+            <p class="dest__meta">Великобритания</p>
+            <p class="dest__time mono">≈ 4 Ч 00 МИН · ПРЯМОЙ</p>
+          </article>
+        </div>
+        <p class="section__note mono" data-reveal>+ ЛЮБОЙ ИЗ 40 000 АЭРОПОРТОВ МИРА — ПО ЗАПРОСУ</p>
+      </div>
+    </section>
+
+    <!-- 03 · Флот -->
+    <section class="section" id="fleet">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow mono">ФЛОТ</p>
+            <h2>Три класса.<br>Один стандарт тишины.</h2>
+          </div>
+          <p class="section__lead">Демо-борта для примера. Замените карточки характеристиками своего флота — структура готова.</p>
+        </header>
+        <div class="cards cards--3" data-reveal data-reveal-group>
+          <article class="card fleet-card">
+            <p class="fleet-card__tag mono">ДЕМО-БОРТ 01 · LIGHT</p>
+            <h3>Лёгкий джет</h3>
+            <p class="fleet-card__desc">Короткие деловые маршруты до трёх часов полёта. Взлёт с коротких полос.</p>
+            <ul class="specs mono">
+              <li><span>Мест</span><span>до 7</span></li>
+              <li><span>Дальность</span><span>3 000 км</span></li>
+              <li><span>Крейсер</span><span>750 км/ч</span></li>
+            </ul>
+          </article>
+          <article class="card fleet-card">
+            <p class="fleet-card__tag mono">ДЕМО-БОРТ 02 · MIDSIZE</p>
+            <h3>Средний джет</h3>
+            <p class="fleet-card__desc">Европа и Ближний Восток без дозаправки. Полноценный салон-переговорная.</p>
+            <ul class="specs mono">
+              <li><span>Мест</span><span>до 9</span></li>
+              <li><span>Дальность</span><span>5 600 км</span></li>
+              <li><span>Крейсер</span><span>850 км/ч</span></li>
+            </ul>
+          </article>
+          <article class="card fleet-card">
+            <p class="fleet-card__tag mono">ДЕМО-БОРТ 03 · HEAVY</p>
+            <h3>Дальнемагистральный</h3>
+            <p class="fleet-card__desc">Межконтинентальные рейсы со спальней и душем. До 14 часов в воздухе.</p>
+            <ul class="specs mono">
+              <li><span>Мест</span><span>до 14</span></li>
+              <li><span>Дальность</span><span>11 500 км</span></li>
+              <li><span>Крейсер</span><span>900 км/ч</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Сервис на борту (доверие) -->
+    <section class="section" id="service">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow mono">СЕРВИС НА БОРТУ</p>
+            <h2>Полёт начинается<br>задолго до взлёта.</h2>
+          </div>
+          <p class="section__lead">Три услуги-заглушки: замените названия и описания своими — сетка и анимации сохранятся.</p>
+        </header>
+        <div class="cards cards--3" data-reveal data-reveal-group>
+          <article class="card service-card">
+            <p class="service-card__tag mono">УСЛУГА 01</p>
+            <h3>Персональный консьерж</h3>
+            <p>Один контакт для всего маршрута: от трансфера и отеля до особых запросов на борту. Текст-заглушка.</p>
+          </article>
+          <article class="card service-card">
+            <p class="service-card__tag mono">УСЛУГА 02</p>
+            <h3>Кейтеринг по вашему меню</h3>
+            <p>Бортовое меню от шефа под ваши предпочтения и время вылета. Текст-заглушка.</p>
+          </article>
+          <article class="card service-card">
+            <p class="service-card__tag mono">УСЛУГА 03</p>
+            <h3>Трансфер к трапу</h3>
+            <p>Автомобиль подаётся к борту, паспортный контроль — в VIP-терминале за 15 минут. Текст-заглушка.</p>
+          </article>
+        </div>
+        <div class="quotes" data-reveal data-reveal-group>
+          <blockquote class="quote">
+            <p>«Демо-отзыв: текст-заглушка о сервисе, тишине салона и внимании к деталям. Замените реальной цитатой клиента.»</p>
+            <footer class="mono">КЛИЕНТ 01 · ЧАСТЫЙ МАРШРУТ МОСКВА — НИЦЦА</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>«Демо-отзыв: текст-заглушка о скорости организации рейса и работе экипажа. Замените реальной цитатой клиента.»</p>
+            <footer class="mono">КЛИЕНТ 02 · КОРПОРАТИВНЫЕ РЕЙСЫ</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · Безопасность и цифры -->
+    <section class="section" id="safety">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow mono">БЕЗОПАСНОСТЬ</p>
+            <h2>Цифры, на которых<br>стоит спокойствие.</h2>
+          </div>
+          <p class="section__lead">Все значения демонстрационные — подставьте свои показатели и сертификаты.</p>
+        </header>
+        <div class="stats" data-reveal data-reveal-group>
+          <div class="stat">
+            <span class="stat__num" data-count="15">15</span>
+            <span class="stat__cap mono">ЛЕТ ЭКСПЛУАТАЦИИ БЕЗ ИНЦИДЕНТОВ</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="12400">12 400</span>
+            <span class="stat__cap mono">ЧАСОВ НАЛЁТА КОМАНДИРОВ</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="100" data-suffix="%">100%</span>
+            <span class="stat__cap mono">СТРАХОВОЕ ПОКРЫТИЕ РЕЙСОВ</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="24" data-suffix="/7">24/7</span>
+            <span class="stat__cap mono">ДИСПЕТЧЕРСКАЯ ПОДДЕРЖКА</span>
+          </div>
+        </div>
+        <div class="badges mono" data-reveal>
+          <span>АУДИТ БЕЗОПАСНОСТИ · ЗАГЛУШКА 01</span>
+          <span>СЕРТИФИКАТ ЭКСПЛУАТАНТА · ЗАГЛУШКА 02</span>
+          <span>СТРАХОВОЙ ПАРТНЁР · ЗАГЛУШКА 03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Запрос рейса -->
+    <section class="section request" id="request">
+      <div class="container">
+        <div class="request__panel" data-reveal>
+          <p class="eyebrow mono">ЗАПРОС РЕЙСА</p>
+          <h2>Назовите маршрут — остальное сделаем мы.</h2>
+          <p class="section__lead">Ответим в течение 30 минут. Демо-форма: данные никуда не отправляются.</p>
+          <form id="request-form" class="form" novalidate>
+            <div class="form__grid">
+              <label>Откуда
+                <input type="text" name="from" placeholder="Москва (UUWW)" autocomplete="off" required>
+              </label>
+              <label>Куда
+                <input type="text" name="to" placeholder="Ницца (LFMN)" autocomplete="off" required>
+              </label>
+              <label>Дата вылета
+                <input type="date" name="date" required>
+              </label>
+              <label>Пассажиры
+                <input type="number" name="pax" min="1" max="14" placeholder="4" required>
+              </label>
+              <label>Имя
+                <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required>
+              </label>
+              <label>Телефон
+                <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" autocomplete="tel" required>
+              </label>
+            </div>
+            <button type="submit" class="btn btn--gold form__submit">Запросить рейс</button>
+            <p class="form__success" role="status">Запрос принят. Демо-режим: в рабочей версии здесь будет подтверждение с номером заявки.</p>
+          </form>
+          <div class="request__contacts mono">
+            <span>+7 (000) 000-00-00</span>
+            <span>FLY@DEMO-BRAND.EXAMPLE</span>
+            <span>ОТВЕТ — ДО 30 МИНУТ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <a class="brand" href="#hero">ALTIUS<span> AIR</span></a>
+          <nav class="footer__links" aria-label="Навигация в подвале">
+            <a href="#destinations">Направления</a>
+            <a href="#fleet">Флот</a>
+            <a href="#service">Сервис</a>
+            <a href="#safety">Безопасность</a>
+            <a href="#request">Запрос рейса</a>
+          </nav>
+        </div>
+        <p class="footer__note mono">© 2026 ALTIUS AIR — ДЕМО-ШАБЛОН. ВСЕ НАЗВАНИЯ, ЦИФРЫ И ОТЗЫВЫ ВЫМЫШЛЕНЫ.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <noscript>
+    <style>.preloader{display:none}.hud{display:none}</style>
+  </noscript>
+  <script>
+    setTimeout(function () {
+      var p = document.getElementById('preloader');
+      if (p && !p.classList.contains('is-done')) p.classList.add('is-done');
+    }, 9000);
+  </script>
+</body>
+</html>
