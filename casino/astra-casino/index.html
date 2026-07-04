@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#060813">
+  <title>ASTRA — Игра за пределами ожидаемого</title>
+  <meta name="description" content="ASTRA — демонстрационный концепт кинематографичного игрового lobby. Тёмное премиальное sci-fi пространство, шесть демо-режимов. Не является сервисом азартных игр.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23060813'/%3E%3Ccircle cx='13' cy='13' r='7' fill='%234df3e5'/%3E%3Ccircle cx='20' cy='20' r='8' fill='%237b5cff' opacity='0.75'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="assets/img/astra-chicken-chase-hero.webp" fetchpriority="high">
+</head>
+<body>
+  <a class="skip-link" href="#games">К списку игр</a>
+
+  <!-- Ambient decorative 3D layer — below all UI, never interactive -->
+  <canvas id="astra-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient soundtrack (original generated pad). Never autoplays. -->
+  <audio id="ambient" loop preload="none" aria-hidden="true">
+    <source src="assets/audio/astra-ambient.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="ASTRA — на главную">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-word">ASTRA</span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#games">Игры</a>
+        <a href="#manifesto">Мир Astra</a>
+        <a href="#about">О проекте</a>
+      </nav>
+      <div class="header-actions">
+        <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="Включить фоновый звук сцены">
+          <span class="sound-icon" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </span>
+          <span class="sound-label">Звук</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Открыть меню">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Мобильная навигация" hidden>
+      <a href="#games">Игры</a>
+      <a href="#manifesto">Мир Astra</a>
+      <a href="#about">О проекте</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-media" data-media data-hero>
+        <picture class="hero-poster">
+          <img src="assets/img/astra-chicken-chase-hero.webp"
+               alt="Кинематографичная сцена мира ASTRA в глубоком фиолетово-циановом свете"
+               width="1672" height="941" fetchpriority="high">
+        </picture>
+        <video class="hero-video" muted playsinline preload="auto"
+               poster="assets/img/astra-chicken-chase-hero.webp"
+               aria-label="Анимированная сцена мира ASTRA">
+          <source src="assets/video/astra-chicken-chase-hero.webm" type="video/webm">
+          <source src="assets/video/astra-chicken-chase-hero.mp4" type="video/mp4">
+        </video>
+        <span class="hero-scrim" aria-hidden="true"></span>
+        <span class="hero-grain" aria-hidden="true"></span>
+      </div>
+
+      <div class="shell hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>ASTRA · Beyond the expected</p>
+          <h1 class="hero-title" id="hero-title">Игра за пределами ожидаемого</h1>
+          <p class="hero-lead">Кинематографичный игровой мир: шесть демо-режимов, спокойный интерфейс и пространство, в котором ничто не давит на решение.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#games">Исследовать игры</a>
+            <button class="btn btn-ghost" type="button" data-open-modal data-game="aurora-21">
+              <span class="btn-play" aria-hidden="true"></span>Смотреть шоурил
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="filters" aria-label="Фильтр игр по категориям">
+      <div class="shell">
+        <div class="filter-scroll" role="group" aria-label="Категории">
+          <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">Все</button>
+          <button class="chip" type="button" data-filter="slots" aria-pressed="false">Slots</button>
+          <button class="chip" type="button" data-filter="live" aria-pressed="false">Live</button>
+          <button class="chip" type="button" data-filter="instant" aria-pressed="false">Instant</button>
+          <button class="chip" type="button" data-filter="table" aria-pressed="false">Table</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GAME GALLERY ============ -->
+    <section class="gallery" id="games" aria-labelledby="games-title">
+      <div class="shell">
+        <header class="section-head">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>Каталог · шесть демо</p>
+          <h2 class="section-title" id="games-title">Игровая коллекция</h2>
+        </header>
+
+        <div class="game-list">
+
+          <!-- 01 · Prism Roulette — text left 5 / media right 7 -->
+          <article class="game-block block-split" data-category="live" data-game-block="prism-roulette">
+            <div class="game-text">
+              <p class="game-meta"><span class="game-num">01</span><span class="game-cat">Live</span><span class="badge">Demo</span></p>
+              <h3 class="game-title">Prism Roulette</h3>
+              <p class="game-desc">Прозрачный барабан из оптического стекла. Живая раздача, чистая геометрия, ни одного лишнего пикселя.</p>
+              <button class="btn btn-outline" type="button" data-open-modal data-game="prism-roulette">Открыть демо</button>
+            </div>
+            <figure class="game-media" data-media>
+              <picture class="game-poster">
+                <img src="assets/img/prism-roulette.webp" alt="Прозрачное колесо рулетки Prism Roulette из оптического стекла" width="1672" height="941" loading="lazy">
+              </picture>
+              <video muted loop playsinline preload="none" poster="assets/img/prism-roulette.webp" aria-label="Анимация Prism Roulette">
+                <source src="assets/video/prism-roulette.webm" type="video/webm">
+                <source src="assets/video/prism-roulette.mp4" type="video/mp4">
+              </video>
+              <span class="media-sweep" aria-hidden="true"></span>
+              <span class="media-grain" aria-hidden="true"></span>
+              <span class="media-vignette" aria-hidden="true"></span>
+              <span class="media-ring" aria-hidden="true"></span>
+            </figure>
+          </article>
+
+          <!-- 02 · Orbit Run — media left 7 / text right 5 -->
+          <article class="game-block block-split block-reverse" data-category="instant" data-game-block="orbit-run">
+            <div class="game-text">
+              <p class="game-meta"><span class="game-num">02</span><span class="game-cat">Instant</span><span class="badge">Demo</span></p>
+              <h3 class="game-title">Orbit Run</h3>
+              <p class="game-desc">Кривая набирает высоту в реальном времени. Мгновенный формат для тех, кто любит читать momentum.</p>
+              <button class="btn btn-outline" type="button" data-open-modal data-game="orbit-run">Открыть демо</button>
+            </div>
+            <figure class="game-media" data-media>
+              <picture class="game-poster">
+                <img src="assets/img/orbit-run.webp" alt="Восходящая световая кривая мгновенной игры Orbit Run" width="1672" height="941" loading="lazy">
+              </picture>
+              <video muted loop playsinline preload="none" poster="assets/img/orbit-run.webp" aria-label="Анимация Orbit Run">
+                <source src="assets/video/orbit-run.webm" type="video/webm">
+                <source src="assets/video/orbit-run.mp4" type="video/mp4">
+              </video>
+              <span class="media-sweep" aria-hidden="true"></span>
+              <span class="media-grain" aria-hidden="true"></span>
+              <span class="media-vignette" aria-hidden="true"></span>
+              <span class="media-ring" aria-hidden="true"></span>
+            </figure>
+          </article>
+
+          <!-- 03 + 04 · Pulse Drop / Void Grid — two cards 6 / 6 -->
+          <div class="game-pair">
+            <article class="game-block block-card" data-category="instant" data-game-block="pulse-drop">
+              <figure class="game-media" data-media>
+                <picture class="game-poster">
+                  <img src="assets/img/pulse-drop.webp" alt="Фишка падает сквозь световую решётку в Pulse Drop" width="1672" height="941" loading="lazy">
+                </picture>
+                <video muted loop playsinline preload="none" poster="assets/img/pulse-drop.webp" aria-label="Анимация Pulse Drop">
+                  <source src="assets/video/pulse-drop.webm" type="video/webm">
+                  <source src="assets/video/pulse-drop.mp4" type="video/mp4">
+                </video>
+                <span class="media-sweep" aria-hidden="true"></span>
+                <span class="media-grain" aria-hidden="true"></span>
+                <span class="media-vignette" aria-hidden="true"></span>
+              </figure>
+              <div class="game-text">
+                <p class="game-meta"><span class="game-num">03</span><span class="game-cat">Instant</span><span class="badge">Demo</span></p>
+                <h3 class="game-title">Pulse Drop</h3>
+                <p class="game-desc">Фишка падает сквозь световую решётку. Физика, свет и спокойный ритм.</p>
+                <button class="btn btn-outline" type="button" data-open-modal data-game="pulse-drop">Открыть демо</button>
+              </div>
+            </article>
+
+            <article class="game-block block-card" data-category="instant" data-game-block="void-grid">
+              <figure class="game-media" data-media>
+                <picture class="game-poster">
+                  <img src="assets/img/void-grid.webp" alt="Тёмная сетка скрытых ячеек в Void Grid" width="1672" height="941" loading="lazy">
+                </picture>
+                <video muted loop playsinline preload="none" poster="assets/img/void-grid.webp" aria-label="Анимация Void Grid">
+                  <source src="assets/video/void-grid.webm" type="video/webm">
+                  <source src="assets/video/void-grid.mp4" type="video/mp4">
+                </video>
+                <span class="media-sweep" aria-hidden="true"></span>
+                <span class="media-grain" aria-hidden="true"></span>
+                <span class="media-vignette" aria-hidden="true"></span>
+              </figure>
+              <div class="game-text">
+                <p class="game-meta"><span class="game-num">04</span><span class="game-cat">Instant</span><span class="badge">Demo</span></p>
+                <h3 class="game-title">Void Grid</h3>
+                <p class="game-desc">Сетка скрытых ячеек в темноте. Пространственная логика вместо шума.</p>
+                <button class="btn btn-outline" type="button" data-open-modal data-game="void-grid">Открыть демо</button>
+              </div>
+            </article>
+          </div>
+
+          <!-- 05 · Aurora 21 — wide media + separate text panel -->
+          <article class="game-block block-wide" data-category="table" data-game-block="aurora-21">
+            <figure class="game-media" data-media>
+              <picture class="game-poster">
+                <img src="assets/img/aurora-21.webp" alt="Живой стол Aurora 21 в студии северного сияния" width="1672" height="941" loading="lazy">
+              </picture>
+              <video muted loop playsinline preload="none" poster="assets/img/aurora-21.webp" aria-label="Анимация Aurora 21">
+                <source src="assets/video/aurora-21.webm" type="video/webm">
+                <source src="assets/video/aurora-21.mp4" type="video/mp4">
+              </video>
+              <span class="media-sweep" aria-hidden="true"></span>
+              <span class="media-grain" aria-hidden="true"></span>
+              <span class="media-vignette" aria-hidden="true"></span>
+              <span class="media-ring" aria-hidden="true"></span>
+            </figure>
+            <div class="game-text wide-panel">
+              <p class="game-meta"><span class="game-num">05</span><span class="game-cat">Table</span><span class="badge">Demo</span></p>
+              <h3 class="game-title">Aurora 21</h3>
+              <p class="game-desc">Классический счёт до&nbsp;21 в&nbsp;студии северного сияния. Живой стол, мягкий свет, спокойный ведущий.</p>
+              <button class="btn btn-outline" type="button" data-open-modal data-game="aurora-21">Открыть демо</button>
+            </div>
+          </article>
+
+          <!-- 06 · Nova Reels — final featured block -->
+          <article class="game-block block-featured" data-category="slots" data-game-block="nova-reels">
+            <div class="featured-head">
+              <p class="game-meta"><span class="game-num">06</span><span class="game-cat">Slots</span><span class="badge badge-gold">Featured demo</span></p>
+              <h3 class="game-title game-title-lg">Nova Reels</h3>
+              <p class="game-desc">Барабаны собраны из звёздной пыли. Флагманский видеослот мира Astra — тот самый экран, ради которого всё и затевалось.</p>
+              <button class="btn btn-primary" type="button" data-open-modal data-game="nova-reels">Открыть демо</button>
+            </div>
+            <figure class="game-media game-media-tall" data-media>
+              <picture class="game-poster">
+                <img src="assets/img/nova-reels.webp" alt="Флагманский видеослот Nova Reels с барабанами из звёздной пыли" width="1672" height="941" loading="lazy">
+              </picture>
+              <video muted loop playsinline preload="none" poster="assets/img/nova-reels.webp" aria-label="Анимация Nova Reels">
+                <source src="assets/video/nova-reels.webm" type="video/webm">
+                <source src="assets/video/nova-reels.mp4" type="video/mp4">
+              </video>
+              <span class="media-sweep" aria-hidden="true"></span>
+              <span class="media-grain" aria-hidden="true"></span>
+              <span class="media-vignette" aria-hidden="true"></span>
+              <span class="media-ring" aria-hidden="true"></span>
+            </figure>
+          </article>
+
+        </div>
+
+        <p class="empty-note" id="emptyNote" hidden>В этой категории пока нет демо. Выберите другую.</p>
+      </div>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="shell">
+        <header class="section-head section-head-center">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>Дизайн-принципы</p>
+          <h2 class="section-title manifesto-title" id="manifesto-title">Не громче.<br>Глубже.</h2>
+        </header>
+        <ul class="principles">
+          <li class="principle">
+            <span class="principle-key" aria-hidden="true">01</span>
+            <h3>Mobile-first</h3>
+            <p>Крупные цели и лёгкая навигация. Всё, что важно, помещается в большой палец.</p>
+          </li>
+          <li class="principle">
+            <span class="principle-key" aria-hidden="true">02</span>
+            <h3>Motion-aware</h3>
+            <p>Анимация поддерживает сцену, а не борется за внимание. Уважает reduced-motion.</p>
+          </li>
+          <li class="principle">
+            <span class="principle-key" aria-hidden="true">03</span>
+            <h3>Responsible</h3>
+            <p>Без давления и ложной срочности. Никаких таймеров, фальшивых выигрышей и тёмных паттернов.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="shell about-inner">
+        <div class="about-copy">
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>О проекте</p>
+          <h2 class="section-title" id="about-title">Что это такое</h2>
+          <p class="about-lead">ASTRA — визуальный демонстрационный концепт игрового lobby 2026 года. Здесь нет ставок, депозитов, баланса и реальных игр — только атмосфера, типографика и работа со светом.</p>
+          <p class="about-lead">Все названия вымышлены, все ролики оригинальны. Это витрина подхода, а не сервис.</p>
+        </div>
+        <ul class="about-facts">
+          <li><span class="fact-k">6</span><span class="fact-v">демо-режимов</span></li>
+          <li><span class="fact-k">0</span><span class="fact-v">реальных ставок</span></li>
+          <li><span class="fact-k">18+</span><span class="fact-v">только для взрослых</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="ASTRA — наверх">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-word">ASTRA</span>
+        </a>
+        <p class="footer-tag">Beyond the expected</p>
+      </div>
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <a href="#games">Игры</a>
+        <a href="#manifesto">Мир Astra</a>
+        <a href="#about">О проекте</a>
+      </nav>
+    </div>
+    <p class="disclaimer">Демонстрационный концепт · 18+ · Не является сервисом азартных игр</p>
+  </footer>
+
+  <!-- ============ MODAL ============ -->
+  <dialog class="modal" id="gameModal" aria-labelledby="modalTitle">
+    <div class="modal-inner">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть демо">
+        <span aria-hidden="true">×</span>
+      </button>
+      <figure class="modal-media">
+        <video id="modalVideo" class="modal-video" muted loop playsinline preload="none" aria-label="Демо-анимация">
+        </video>
+        <span class="media-vignette" aria-hidden="true"></span>
+      </figure>
+      <div class="modal-text">
+        <p class="game-meta"><span class="game-cat" id="modalCat">Demo</span><span class="badge">Demo</span></p>
+        <h2 class="game-title" id="modalTitle">Игра</h2>
+        <p class="modal-note">Демонстрационная анимация. Это концепт — реальная игра, ставки и выигрыши не запускаются.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===== Libraries (pinned versions + Subresource Integrity) ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer
+          integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer
+          integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer
+          integrity="sha384-O55L/6rhHr9CFvrxqv5luxOCcmVaBmETbZbJDP+Do8T0pztTACsFBD/IXCNkj7DV" crossorigin="anonymous"></script>
+
+  <!-- Import map for Three.js (ES module, pinned + integrity) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    },
+    "integrity": {
+      "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js": "sha384-61S/Nu32S3E5+n+KpCOTb2eRYps6fVKm+9Gz1QBvSePFthb46f063Aa/qe/lykFZ"
+    }
+  }
+  </script>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
