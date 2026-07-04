@@ -26,6 +26,7 @@
 |:---:|---|---|:---:|
 | [<img src="docs/previews/jet-charter-dawn.jpg" width="420" alt="ALTIUS AIR — превью">](aviation/jet-charter-dawn/) | **[ALTIUS AIR](aviation/jet-charter-dawn/)**<br>`aviation/jet-charter-dawn` | Частная чартерная авиация. Пролёт камеры сквозь облака к джету на рассвете, скролл «снижает» вас по секциям до формы заявки. | ✅ Готов |
 | [<img src="docs/previews/fine-dining-noir.jpg" width="420" alt="NOCTURNE — превью">](food/fine-dining-noir/) | **[NOCTURNE](food/fine-dining-noir/)**<br>`food/fine-dining-noir` | Ресторан высокой кухни. При свете свечей камера наводит фокус на блюдо — пар и капля застыли в кадре, — а скролл ведёт через вечер до брони стола. | ✅ Готов |
+| [<img src="docs/previews/astra-casino.jpg" width="420" alt="ASTRA — превью">](casino/astra-casino/) | **[ASTRA](casino/astra-casino/)**<br>`casino/astra-casino` | Онлайн-казино (демо-концепт). На первом экране бесшовно крутится кинематографичное видео, а плавный скролл ведёт по галерее из шести игр — каждая оживает при наведении. 18+, не сервис азартных игр. | ✅ Готов |
 
 > Коллекция пополняется. Запланированные ниши: 🔧 услуги и ремёсла, 🏥 медицина, 🚗 авто.
 
@@ -87,6 +88,7 @@ category/site-name/
 |---|---|
 | `aviation/` | ✈️ Авиация |
 | `food/` | 🍽 Еда и рестораны |
+| `casino/` | 🎰 Казино (демо-концепты) |
 | `trades/` | 🔧 Ремёсла и услуги |
 | `medical/` | 🏥 Медицина |
 | `automotive/` | 🚗 Авто |
