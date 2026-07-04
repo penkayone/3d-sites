@@ -17,3 +17,6 @@ node_modules/
 # Env
 .env
 .env.local
+
+# Исходные материалы шаблонов (черновик, не часть шаблона)
+casino/_materials/
