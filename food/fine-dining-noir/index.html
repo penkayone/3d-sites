@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOCTURNE — ресторан высокой кухни (демо-шаблон)</title>
+  <meta name="description" content="Демо-шаблон сайта ресторана высокой кухни: кинематографичная 3D-сцена блюда при свете свечей, пар и капля в фокусе.">
+  <meta name="theme-color" content="#0E0B08">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20fill='%23C7962E'%20d='M16%203c5%207%208%2011%208%2015a8%208%200%200%201-16%200c0-4%203-8%208-15z'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+          integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt"
+          crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+          integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d"
+          crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"
+          integrity="sha384-ClD7pCgIUz5M81HT8aZmMxCsWmfsycmBiwL5gy1pUbdWHvICIbea22N9sTtAFotA"
+          crossorigin="anonymous"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+  <!-- Прелоадер -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__brand">NOCTURNE</div>
+      <div class="preloader__bar"><span id="preloader-bar"></span></div>
+      <div class="preloader__meta label">
+        <span>СЕРВИРУЕМ СТОЛ</span>
+        <span id="preloader-num">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D-фон -->
+  <div id="webgl" class="webgl" aria-hidden="true"></div>
+  <div class="room-fallback" aria-hidden="true"></div>
+
+  <!-- Навигация -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#hero">NOCTURNE<span>°</span></a>
+    <nav class="nav__links" aria-label="Основная навигация">
+      <a href="#philosophy">Философия</a>
+      <a href="#menu">Меню</a>
+      <a href="#chef">Шеф</a>
+      <a href="#atmosphere">Атмосфера</a>
+    </nav>
+    <a class="btn btn--gold nav__cta" href="#reserve">Забронировать стол</a>
+  </header>
+
+  <main id="page">
+
+    <!-- 01 · Герой: блюдо крупным планом -->
+    <section class="section hero" id="hero">
+      <div class="container hero__content">
+        <p class="hero__eyebrow label" data-intro>Ресторан высокой кухни · демо-шаблон</p>
+        <h1 class="hero__title">
+          <span class="w"><span class="w__in">Ужин,</span></span>
+          <span class="w"><span class="w__in">который</span></span>
+          <span class="w"><span class="w__in w__in--gold">помнят.</span></span>
+        </h1>
+        <p class="hero__sub" data-intro>Шесть подач при свете свечей. Сезонные продукты, живой огонь и тишина, в которой слышно вкус. Только по предварительной брони.</p>
+        <div class="hero__cta" data-intro>
+          <a href="#reserve" class="btn btn--gold">Забронировать стол</a>
+          <a href="#menu" class="btn btn--ghost">Смотреть меню</a>
+        </div>
+      </div>
+      <div class="hero__strip label" data-intro>
+        <span>18:00 – 00:00</span><span>6 подач</span><span>16 мест</span><span>только по брони</span>
+      </div>
+      <div class="hero__scroll label" data-intro><span class="hero__scroll-line"></span>ПРОКРУТИТЕ — ПОДАЧА НАЧИНАЕТСЯ</div>
+    </section>
+
+    <!-- 02 · Философия кухни -->
+    <section class="section" id="philosophy">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow label">Философия кухни</p>
+            <h2>Вкус — это<br>память.</h2>
+          </div>
+          <p class="section__lead">Мы готовим не блюда, а вечера. Каждая подача — короткая сцена: температура, свет, аромат и пауза перед первым касанием вилки. Текст-заглушка — замените своим манифестом.</p>
+        </header>
+        <div class="principles" data-reveal data-reveal-group>
+          <article class="principle">
+            <p class="principle__no label">I</p>
+            <h3>Сезон</h3>
+            <p>Меню меняется вместе с рынком. Только то, что созрело сейчас, — и ничего из другого полушария. Текст-заглушка.</p>
+          </article>
+          <article class="principle">
+            <p class="principle__no label">II</p>
+            <h3>Огонь</h3>
+            <p>Живой жар, дым и уголь как отдельный ингредиент. Вкус, который нельзя получить на индукции. Текст-заглушка.</p>
+          </article>
+          <article class="principle">
+            <p class="principle__no label">III</p>
+            <h3>Тишина</h3>
+            <p>Приглушённый свет, мягкий звук, простор между столами. Ужин без спешки — на три-четыре часа. Текст-заглушка.</p>
+          </article>
+        </div>
+        <blockquote class="manifesto" data-reveal>
+          <p>«Хороший ужин заканчивается не тогда, когда пуста тарелка, — а когда о нём хочется рассказать.»</p>
+          <footer class="label">Демо-манифест · замените цитатой шефа</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 03 · Меню / сеты -->
+    <section class="section" id="menu">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow label">Дегустационный сет</p>
+            <h2>Шесть подач<br>одного вечера.</h2>
+          </div>
+          <p class="section__lead">Демо-меню: названия и описания подач — заглушки. Замените своими — структура списка и анимации сохранятся.</p>
+        </header>
+
+        <ol class="menu" data-reveal data-reveal-group>
+          <li class="course">
+            <span class="course__no label">I</span>
+            <span class="course__body">
+              <span class="course__name">Устрица и зелёное яблоко</span>
+              <span class="course__desc">холодный старт, огуречный лёд, укропное масло</span>
+            </span>
+            <span class="course__lead" aria-hidden="true"></span>
+            <span class="course__tag label">включено</span>
+          </li>
+          <li class="course">
+            <span class="course__no label">II</span>
+            <span class="course__body">
+              <span class="course__name">Пшено, дым и белые грибы</span>
+              <span class="course__desc">томление на углях, пена из копчёного масла</span>
+            </span>
+            <span class="course__lead" aria-hidden="true"></span>
+            <span class="course__tag label">включено</span>
+          </li>
+          <li class="course">
+            <span class="course__no label">III</span>
+            <span class="course__body">
+              <span class="course__name">Гребешок, свёкла, чёрная смородина</span>
+              <span class="course__desc">обжиг с одной стороны, тёплый винный жю</span>
+            </span>
+            <span class="course__lead" aria-hidden="true"></span>
+            <span class="course__tag label">включено</span>
+          </li>
+          <li class="course">
+            <span class="course__no label">IV</span>
+            <span class="course__body">
+              <span class="course__name">Утка выдержки 14 дней</span>
+              <span class="course__desc">уголь, вишня, соус на костях и красном вине</span>
+            </span>
+            <span class="course__lead" aria-hidden="true"></span>
+            <span class="course__tag label">включено</span>
+          </li>
+          <li class="course">
+            <span class="course__no label">V</span>
+            <span class="course__body">
+              <span class="course__name">Сыр, груша, грецкий орех</span>
+              <span class="course__desc">переход к десерту, мёд с пасеки-заглушки</span>
+            </span>
+            <span class="course__lead" aria-hidden="true"></span>
+            <span class="course__tag label">включено</span>
+          </li>
+          <li class="course">
+            <span class="course__no label">VI</span>
+            <span class="course__body">
+              <span class="course__name">Шоколад, солёная карамель, дым</span>
+              <span class="course__desc">финал у свечи, петит-фур к кофе</span>
+            </span>
+            <span class="course__lead" aria-hidden="true"></span>
+            <span class="course__tag label">включено</span>
+          </li>
+        </ol>
+
+        <div class="sets" data-reveal data-reveal-group>
+          <article class="set">
+            <p class="set__tag label">Сет 1 · демо</p>
+            <h3>«Ombre»</h3>
+            <p class="set__desc">Шесть подач. Классический ужин вечера — от холодного старта до финала у свечи.</p>
+            <p class="set__price label">Цена по запросу</p>
+          </article>
+          <article class="set set--feature">
+            <p class="set__tag label">Сет 2 · демо</p>
+            <h3>«Lumière»</h3>
+            <p class="set__desc">Восемь подач с сомелье-сопровождением: к каждой сцене — свой бокал.</p>
+            <p class="set__price label">Цена по запросу</p>
+          </article>
+        </div>
+
+        <div class="menu__cta" data-reveal>
+          <a href="#reserve" class="btn btn--gold">Забронировать стол</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Шеф и команда (доверие) -->
+    <section class="section" id="chef">
+      <div class="container">
+        <header class="section__head" data-reveal>
+          <div>
+            <p class="eyebrow label">Шеф и команда</p>
+            <h2>Руки, которым<br>доверяют вечер.</h2>
+          </div>
+          <p class="section__lead">Демо-биография и цифры — заглушки. Подставьте имя шефа, награды и реальные показатели.</p>
+        </header>
+
+        <blockquote class="chef-quote" data-reveal>
+          <p>«Я готовлю так, будто за столом сидят мои близкие. Остальное — детали техники.»</p>
+          <footer class="label">Шеф · Имя Фамилия (заглушка) · 18 лет на кухне</footer>
+        </blockquote>
+
+        <div class="stats" data-reveal data-reveal-group>
+          <div class="stat">
+            <span class="stat__num" data-count="9">9</span>
+            <span class="stat__cap label">лет ресторану · заглушка</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="6">6</span>
+            <span class="stat__cap label">подач в дегустации</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="16">16</span>
+            <span class="stat__cap label">мест в зале за вечер</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="3">3</span>
+            <span class="stat__cap label">награды гида · заглушка</span>
+          </div>
+        </div>
+
+        <div class="quotes" data-reveal data-reveal-group>
+          <blockquote class="quote">
+            <p>«Демо-отзыв: текст-заглушка о вечере, свете свечей и подаче за подачей. Замените реальной цитатой гостя.»</p>
+            <footer class="label">Гость 01 · годовщина</footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>«Демо-отзыв: текст-заглушка о внимании команды и ритме ужина без спешки. Замените реальной цитатой гостя.»</p>
+            <footer class="label">Гость 02 · деловой ужин</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · Атмосфера зала -->
+    <section class="section atmosphere" id="atmosphere">
+      <div class="container atmosphere__inner" data-reveal>
+        <p class="eyebrow eyebrow--center label">Атмосфера зала</p>
+        <h2 class="atmosphere__title">Свет свечей<br>и тишина.</h2>
+        <p class="atmosphere__lead">Шестнадцать мест, приглушённый свет и расстояние между столами, за которым разговор остаётся вашим. Вечер длится столько, сколько нужно. Текст-заглушка — опишите свой зал.</p>
+        <div class="atmosphere__meta label">
+          <span>16 мест</span><span>·</span><span>один сервис за вечер</span><span>·</span><span>дресс-код smart</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · Бронирование -->
+    <section class="section reserve" id="reserve">
+      <div class="container">
+        <div class="reserve__panel" data-reveal>
+          <p class="eyebrow label">Бронирование</p>
+          <h2>Забронируйте стол.</h2>
+          <p class="section__lead">Подтвердим бронь в течение часа. Демо-форма: данные никуда не отправляются.</p>
+          <form id="reserve-form" class="form" novalidate>
+            <div class="form__grid">
+              <label>Дата
+                <input type="date" name="date" required>
+              </label>
+              <label>Время
+                <input type="time" name="time" value="19:00" required>
+              </label>
+              <label>Гостей
+                <input type="number" name="guests" min="1" max="16" placeholder="2" required>
+              </label>
+              <label>Имя
+                <input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required>
+              </label>
+              <label>Телефон
+                <input type="tel" name="phone" placeholder="+7 (000) 000-00-00" autocomplete="tel" required>
+              </label>
+              <label>Повод (необязательно)
+                <input type="text" name="note" placeholder="Годовщина, деловой ужин…" autocomplete="off">
+              </label>
+            </div>
+            <button type="submit" class="btn btn--gold form__submit">Забронировать стол</button>
+            <p class="form__success" role="status">Бронь принята. Демо-режим: в рабочей версии здесь будет подтверждение с номером стола.</p>
+          </form>
+          <div class="reserve__contacts label">
+            <span>+7 (000) 000-00-00</span>
+            <span>HELLO@DEMO-BRAND.EXAMPLE</span>
+            <span>ЕЖЕДНЕВНО 18:00–00:00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <a class="brand" href="#hero">NOCTURNE<span>°</span></a>
+          <nav class="footer__links" aria-label="Навигация в подвале">
+            <a href="#philosophy">Философия</a>
+            <a href="#menu">Меню</a>
+            <a href="#chef">Шеф</a>
+            <a href="#atmosphere">Атмосфера</a>
+            <a href="#reserve">Бронирование</a>
+          </nav>
+        </div>
+        <p class="footer__note label">© 2026 NOCTURNE — ДЕМО-ШАБЛОН. ВСЕ НАЗВАНИЯ, БЛЮДА, ЦИФРЫ И ОТЗЫВЫ ВЫМЫШЛЕНЫ.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <noscript>
+    <style>.preloader{display:none}</style>
+  </noscript>
+  <script>
+    setTimeout(function () {
+      var p = document.getElementById('preloader');
+      if (p && !p.classList.contains('is-done')) p.classList.add('is-done');
+    }, 9000);
+  </script>
+</body>
+</html>
