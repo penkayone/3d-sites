@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AETHER — Studio of Digital Matter</title>
+<meta name="description" content="Премиальная цифровая студия. Мы превращаем идеи в осязаемую материю." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-num" id="loaderNum">0</div>
+  <div class="loader-bar"><span id="loaderBar"></span></div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="#hero" class="logo"><b></b>AETHER</a>
+  <div class="nav-links">
+    <a href="#work" data-cursor>Работы</a>
+    <a href="#studio" data-cursor>Студия</a>
+    <a href="#services" data-cursor>Услуги</a>
+    <a href="#contact" data-cursor>Контакт</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div id="webgl"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-inner">
+    <h1 class="hero-title">
+      <span class="line"><span data-hero>Цифровая</span></span>
+      <span class="line"><span class="stroke" data-hero>материя</span></span>
+      <span class="line"><span data-hero>в движении</span></span>
+    </h1>
+    <div class="hero-meta">
+      <p data-hero-fade>Студия, превращающая абстрактные идеи в осязаемые интерактивные миры. Дизайн, код и кинетика как единое целое.</p>
+      <div class="scroll-cue" data-hero-fade><i></i> Скролл</div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>WebGL</span><span class="stroke">Motion</span><span>Brand</span><span class="stroke">Three.js</span><span>Interaction</span><span class="stroke">Design</span>
+    <span>WebGL</span><span class="stroke">Motion</span><span>Brand</span><span class="stroke">Three.js</span><span>Interaction</span><span class="stroke">Design</span>
+  </div>
+</div>
+
+<!-- Manifesto -->
+<section id="studio">
+  <div class="eyebrow reveal">Манифест</div>
+  <div class="manifesto">
+    <h2 id="manifestoText">Мы не делаем сайты. Мы создаём пространства, где интерфейс становится материей — живой, отзывчивой и невозможно красивой.</h2>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="sec-head">
+    <h2 class="reveal">Что мы<br>создаём</h2>
+    <span class="count reveal">[ 04 направления ]</span>
+  </div>
+  <div class="svc">
+    <div class="svc-row reveal">
+      <span class="idx">01</span>
+      <h3>WebGL &amp; 3D</h3>
+      <p>Шейдеры, генеративная графика и интерактивные сцены, работающие в реальном времени прямо в браузере.</p>
+      <span class="arr">↗</span>
+    </div>
+    <div class="svc-row reveal">
+      <span class="idx">02</span>
+      <h3>Motion-дизайн</h3>
+      <p>Кинетическая типографика и анимации по скроллу, задающие ритм и характер всему продукту.</p>
+      <span class="arr">↗</span>
+    </div>
+    <div class="svc-row reveal">
+      <span class="idx">03</span>
+      <h3>Брендинг</h3>
+      <p>Визуальные системы, которые звучат одинаково ярко в статике и в движении.</p>
+      <span class="arr">↗</span>
+    </div>
+    <div class="svc-row reveal">
+      <span class="idx">04</span>
+      <h3>Продукт &amp; UX</h3>
+      <p>Интерфейсы, где инженерная точность встречается с эмоциональным дизайном.</p>
+      <span class="arr">↗</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section>
+  <div class="stats">
+    <div class="stat reveal"><div class="num" data-count="148">0</div><div class="lbl">Проектов</div></div>
+    <div class="stat reveal"><div class="num" data-count="32">0</div><div class="lbl">Награды</div></div>
+    <div class="stat reveal"><div class="num" data-count="12">0</div><div class="lbl">Лет в деле</div></div>
+    <div class="stat reveal"><div class="num" data-count="99" data-suffix="%">0</div><div class="lbl">Возвращаются</div></div>
+  </div>
+</section>
+
+<!-- Showcase -->
+<section id="work">
+  <div class="sec-head">
+    <h2 class="reveal">Избранные<br>работы</h2>
+    <span class="count reveal">[ 2024 — 2026 ]</span>
+  </div>
+  <div class="cards">
+    <article class="card a reveal" data-cursor><div class="glow g1"></div><span class="tag">WebGL / Brand</span><h3>NOVA Particles</h3><p>Генеративная инсталляция из 200k частиц, реагирующая на звук и курсор.</p></article>
+    <article class="card b reveal" data-cursor><div class="glow g2"></div><span class="tag">Product</span><h3>Helix OS</h3><p>Дашборд нового поколения с живой 3D-навигацией.</p></article>
+    <article class="card c reveal" data-cursor><div class="glow g3"></div><span class="tag">Motion</span><h3>Pulse Identity</h3><p>Кинетический бренд для музыкального лейбла.</p></article>
+    <article class="card d reveal" data-cursor><div class="glow g4"></div><span class="tag">WebGL / Experience</span><h3>Liquid Worlds</h3><p>Иммерсивный лендинг с шейдерной жидкостью и физикой в реальном времени.</p></article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="eyebrow reveal" style="justify-content:center">Поговорим</div>
+  <h2 class="reveal">Создадим<br><span class="accent">невозможное</span></h2>
+  <a href="mailto:hello@aether.studio" class="btn" data-cursor><span>Начать проект</span><span>→</span></a>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div class="foot-col">
+      <h4>Навигация</h4>
+      <a href="#work" data-cursor>Работы</a>
+      <a href="#studio" data-cursor>Студия</a>
+      <a href="#services" data-cursor>Услуги</a>
+    </div>
+    <div class="foot-col">
+      <h4>Соцсети</h4>
+      <a href="#" data-cursor>Instagram</a>
+      <a href="#" data-cursor>Behance</a>
+      <a href="#" data-cursor>X / Twitter</a>
+    </div>
+    <div class="foot-col">
+      <h4>Связь</h4>
+      <a href="mailto:hello@aether.studio" data-cursor>hello@aether.studio</a>
+      <a href="#" data-cursor>+7 999 000 00 00</a>
+    </div>
+  </div>
+  <div class="foot-big">AETHER</div>
+  <div class="foot-bottom">
+    <span>© 2026 AETHER Studio. Сделано из света и кода.</span>
+    <span>Москва — Берлин — Токио</span>
+  </div>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
