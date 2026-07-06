@@ -1,0 +1,20 @@
+{
+  "name": "anton-goloskokov-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cinematic 3D portfolio — Technical SEO & AI Automation Engineer",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.18",
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}
