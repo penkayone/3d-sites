@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anton Goloskokov — Technical SEO &amp; AI Automation Engineer</title>
+  <meta
+    name="description"
+    content="I build autonomous systems on n8n and AI, rank multilingual websites across GEOs, and ship content, end to end."
+  />
+  <meta name="theme-color" content="#05060A" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Grain + custom cursor (desktop only) -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-num"><span id="loaderNum">0</span><i>%</i></div>
+    <div class="loader-bar"><span id="loaderBar"></span></div>
+    <div class="loader-label">Booting systems</div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <a href="#hero" class="brand" data-cursor><b></b>AG <em>·</em> n8n</a>
+    <span class="avail"><i></i>Available for work</span>
+  </header>
+
+  <main>
+    <!-- ACT 1 — HERO -->
+    <section id="hero">
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <div class="hero-grad" aria-hidden="true"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <p class="eyebrow" data-hero-fade>
+          <span class="eyebrow-line"></span>Portfolio — 2026
+        </p>
+        <h1 class="hero-title">
+          <span class="line"><span data-hero>Anton</span></span>
+          <span class="line"><span class="stroke" data-hero>Goloskokov</span></span>
+        </h1>
+        <p class="hero-role" data-hero-fade>
+          Technical SEO <span class="amp">&amp;</span> AI Automation Engineer
+        </p>
+        <p class="hero-desc" data-hero-fade>
+          I build autonomous systems on n8n and AI, rank multilingual websites
+          across GEOs, and ship content, end to end.
+        </p>
+      </div>
+
+      <a href="#manifesto" class="scroll-cue" data-hero-fade data-cursor>
+        <i></i><span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- ACT 2 — MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>n8n</span><span class="stroke">Claude API</span><span>Technical SEO</span><span class="stroke">Multi-GEO</span><span>Schema.org</span><span class="stroke">Core Web Vitals</span><span>WordPress</span><span class="stroke">Content &amp; AI</span>
+        <span>n8n</span><span class="stroke">Claude API</span><span>Technical SEO</span><span class="stroke">Multi-GEO</span><span>Schema.org</span><span class="stroke">Core Web Vitals</span><span>WordPress</span><span class="stroke">Content &amp; AI</span>
+      </div>
+    </div>
+
+    <!-- ACT 3 — MANIFESTO -->
+    <section id="manifesto">
+      <p class="eyebrow reveal"><span class="eyebrow-line"></span>Manifesto</p>
+      <h2 class="manifesto-text" data-split>
+        I don't just rank pages. I build systems that find leads, watch the
+        SERPs, fix what breaks, and ship content, while you sleep.
+      </h2>
+    </section>
+
+    <!-- ACT 4 — STATS -->
+    <section class="stats-sec">
+      <div class="stats">
+        <div class="stat reveal">
+          <div class="num" data-count="1000" data-suffix="+">0</div>
+          <div class="lbl">Leads automated</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num" data-count="62">0</div>
+          <div class="lbl">Workflow nodes</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num" data-count="5" data-suffix="+">0</div>
+          <div class="lbl">GEO markets</div>
+        </div>
+        <div class="stat reveal">
+          <div class="num" data-static="24/7">24/7</div>
+          <div class="lbl">Autonomous systems</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 5 — FOCUS -->
+    <section id="focus">
+      <div class="sec-head">
+        <h2 class="reveal">Focus</h2>
+        <span class="count reveal">[ 04 disciplines ]</span>
+      </div>
+      <div class="focus-list">
+        <article class="focus-row reveal" data-cursor>
+          <span class="idx">01</span>
+          <h3>AI Automation</h3>
+          <p>
+            End-to-end n8n pipelines and AI agents on the Claude and OpenAI
+            APIs: lead generation, rank tracking, parsing, reporting, webhooks,
+            cron.
+          </p>
+          <span class="arr">↗</span>
+        </article>
+        <article class="focus-row reveal" data-cursor>
+          <span class="idx">02</span>
+          <h3>Technical SEO</h3>
+          <p>
+            Multi-GEO and iGaming: indexation, crawl budget, hreflang,
+            Schema.org, Core Web Vitals, canonical, log analysis. WordPress:
+            Yoast, Rank Math, migrations, custom plugins.
+          </p>
+          <span class="arr">↗</span>
+        </article>
+        <article class="focus-row reveal" data-cursor>
+          <span class="idx">03</span>
+          <h3>Content &amp; AI Production</h3>
+          <p>
+            Content SEO and AI-assisted production: AI-generated copy, AI video
+            (Sora, Runway) and voiceover (ElevenLabs), YouTube editing tuned for
+            CTR and retention.
+          </p>
+          <span class="arr">↗</span>
+        </article>
+        <article class="focus-row reveal" data-cursor>
+          <span class="idx">04</span>
+          <h3>Backend &amp; Infrastructure</h3>
+          <p>
+            PHP, MySQL, Python, Cloudflare (WAF, Bot Fight Mode), Nginx, Linux,
+            VPS, Docker, Git. SEO solved at the code and server level.
+          </p>
+          <span class="arr">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACT 5.5 — PROCESS -->
+    <section id="process">
+      <div class="sec-head">
+        <h2 class="reveal">How a system runs</h2>
+        <span class="count reveal">[ autonomous loop ]</span>
+      </div>
+      <ol class="pipeline">
+        <li class="pnode reveal">
+          <span class="pnode-idx">01</span>
+          <h3>Find</h3>
+          <p>Sources and collects leads on a schedule — no manual input.</p>
+        </li>
+        <li class="pnode reveal">
+          <span class="pnode-idx">02</span>
+          <h3>Research</h3>
+          <p>Enriches each lead with the context that makes a message land.</p>
+        </li>
+        <li class="pnode reveal">
+          <span class="pnode-idx">03</span>
+          <h3>Write</h3>
+          <p>Drafts tailored outreach with the Claude API.</p>
+        </li>
+        <li class="pnode reveal">
+          <span class="pnode-idx">04</span>
+          <h3>Send</h3>
+          <p>Delivers, logs every step, and tracks the replies.</p>
+        </li>
+        <li class="pnode reveal">
+          <span class="pnode-idx">05</span>
+          <h3>Follow up</h3>
+          <p>Sequences the next touch automatically — while you sleep.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ACT 6 — SELECTED WORK -->
+    <section id="work">
+      <div class="sec-head">
+        <h2 class="reveal">Selected work</h2>
+        <span class="count reveal">[ 04 systems ]</span>
+      </div>
+      <div class="cards">
+        <article class="card a reveal" data-cursor>
+          <div class="glow g1" aria-hidden="true"></div>
+          <div class="card-viz viz-cyan" aria-hidden="true">
+            <svg viewBox="0 0 140 90" fill="none">
+              <path class="ln" d="M18 24 H52 M52 24 V46 H92 M18 66 H52 V46 M92 46 H122" />
+              <path class="ln flow" d="M18 24 H52 M52 24 V46 H92 M18 66 H52 V46 M92 46 H122" />
+              <circle class="nd" cx="18" cy="24" r="5" />
+              <circle class="nd" cx="18" cy="66" r="5" />
+              <circle class="nd" cx="52" cy="46" r="6" />
+              <circle class="nd" cx="92" cy="46" r="5" />
+              <circle class="nd hot" cx="122" cy="46" r="5" />
+            </svg>
+          </div>
+          <span class="tag">Automation / AI</span>
+          <div class="card-metric"><i></i><b>1000+</b><span>leads automated</span></div>
+          <h3>AI Outreach Machine</h3>
+          <p>
+            A B2B lead-generation engine: 7 n8n workers plus the Claude API. It
+            finds, researches, writes, sends, and follows up. 1000+ leads.
+          </p>
+          <ul class="chips">
+            <li>n8n</li><li>Claude API</li><li>Google Sheets</li>
+          </ul>
+        </article>
+
+        <article class="card b reveal" data-cursor>
+          <div class="glow g2" aria-hidden="true"></div>
+          <div class="card-viz viz-cyan" aria-hidden="true">
+            <svg viewBox="0 0 140 90" fill="none">
+              <path class="area" d="M14 74 L42 60 L70 64 L98 38 L126 20 L126 84 L14 84 Z" />
+              <path class="ln flow" d="M14 74 L42 60 L70 64 L98 38 L126 20" />
+              <circle class="nd hot" cx="126" cy="20" r="4.5" />
+              <circle class="nd sm" cx="98" cy="38" r="3" />
+              <circle class="nd sm" cx="42" cy="60" r="3" />
+            </svg>
+          </div>
+          <span class="tag">Automation / SEO</span>
+          <div class="card-metric"><i></i><b>0</b><span>manual checks left</span></div>
+          <h3>SEO Rank-Tracking Automation</h3>
+          <p>
+            Scheduled n8n parsing of rankings, normalized into Google Sheets
+            dashboards. Replaced manual checks entirely.
+          </p>
+          <ul class="chips">
+            <li>n8n</li><li>Google Sheets</li><li>cron</li>
+          </ul>
+        </article>
+
+        <article class="card c reveal" data-cursor>
+          <div class="glow g3" aria-hidden="true"></div>
+          <div class="card-viz viz-violet" aria-hidden="true">
+            <svg viewBox="0 0 140 90" fill="none">
+              <circle class="ring" cx="70" cy="45" r="34" />
+              <ellipse class="ring" cx="70" cy="45" rx="14" ry="34" />
+              <path class="ln" d="M36 45 H104 M44 26 H96 M44 64 H96" />
+              <circle class="nd hot" cx="52" cy="32" r="3.5" />
+              <circle class="nd hot" cx="92" cy="38" r="3.5" />
+              <circle class="nd hot" cx="58" cy="60" r="3.5" />
+              <circle class="nd hot" cx="86" cy="56" r="3.5" />
+            </svg>
+          </div>
+          <span class="tag">Technical SEO</span>
+          <div class="card-metric"><i></i><b>4</b><span>GEO markets</span></div>
+          <h3>Multi-GEO iGaming SEO</h3>
+          <p>
+            Technical SEO for a portfolio of iGaming clients across Africa,
+            Canada, Poland, and Germany: indexation, hreflang, Schema, and Core
+            Web Vitals per GEO.
+          </p>
+          <ul class="chips">
+            <li>hreflang</li><li>Schema.org</li><li>CWV</li>
+          </ul>
+        </article>
+
+        <article class="card d reveal" data-cursor>
+          <div class="glow g4" aria-hidden="true"></div>
+          <div class="card-viz viz-violet" aria-hidden="true">
+            <svg viewBox="0 0 140 90" fill="none">
+              <path class="ring" d="M70 14 L104 26 V50 C104 70 88 80 70 86 C52 80 36 70 36 50 V26 Z" />
+              <path class="ln flow" d="M54 46 L66 58 L88 34" />
+            </svg>
+          </div>
+          <span class="tag">Technical SEO</span>
+          <div class="card-metric"><i></i><b>403 → 200</b><span>indexation restored</span></div>
+          <h3>Wellness Brand SEO (RU / SK)</h3>
+          <p>
+            Fixed Googlebot blocking from Cloudflare Bot Fight Mode (403) and
+            restored indexation. MySQL 5.7 to 8.0 migration, a custom plugin, a
+            24-task plan.
+          </p>
+          <ul class="chips">
+            <li>WordPress</li><li>Cloudflare</li><li>GSC</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACT 6.5 — STACK -->
+    <section id="stack">
+      <div class="sec-head">
+        <h2 class="reveal">Stack</h2>
+        <span class="count reveal">[ tools of the trade ]</span>
+      </div>
+      <div class="stack-grid">
+        <div class="stack-row reveal">
+          <h4>Automation &amp; AI</h4>
+          <ul>
+            <li>n8n</li><li>Claude API</li><li>OpenAI API</li><li>Webhooks</li><li>Cron</li>
+          </ul>
+        </div>
+        <div class="stack-row reveal">
+          <h4>Technical SEO</h4>
+          <ul>
+            <li>Schema.org</li><li>hreflang</li><li>Core Web Vitals</li><li>Canonical</li><li>Log analysis</li><li>Yoast</li><li>Rank Math</li><li>GSC</li>
+          </ul>
+        </div>
+        <div class="stack-row reveal">
+          <h4>Content &amp; AI Production</h4>
+          <ul>
+            <li>Sora</li><li>Runway</li><li>ElevenLabs</li><li>YouTube</li>
+          </ul>
+        </div>
+        <div class="stack-row reveal">
+          <h4>Backend &amp; Infrastructure</h4>
+          <ul>
+            <li>PHP</li><li>MySQL</li><li>Python</li><li>Cloudflare</li><li>Nginx</li><li>Linux</li><li>VPS</li><li>Docker</li><li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACT 7 — CONTACT / CTA -->
+    <section id="contact" class="cta">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <p class="eyebrow reveal" style="justify-content: center">
+        <span class="eyebrow-line"></span>Contact
+      </p>
+      <h2 class="reveal">Let's automate<br /><span class="accent">something.</span></h2>
+      <div class="cta-actions reveal">
+        <a class="btn btn-primary" href="mailto:An.goloskokov@gmail.com" data-cursor>
+          <span>Email</span><i>→</i>
+        </a>
+        <a class="btn" href="https://github.com/penkayone" target="_blank" rel="noopener" data-cursor>
+          <span>GitHub</span><i>↗</i>
+        </a>
+        <a class="btn" href="https://t.me/antongoloskokov" target="_blank" rel="noopener" data-cursor>
+          <span>Telegram</span><i>↗</i>
+        </a>
+      </div>
+      <p class="cta-sign reveal">Based in Estonia · Working remotely worldwide · RU / EN</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="foot-top">
+      <nav class="foot-col">
+        <h4>Index</h4>
+        <a href="#manifesto" data-cursor>Manifesto</a>
+        <a href="#focus" data-cursor>Focus</a>
+        <a href="#process" data-cursor>Process</a>
+        <a href="#work" data-cursor>Selected work</a>
+        <a href="#stack" data-cursor>Stack</a>
+        <a href="#contact" data-cursor>Contact</a>
+      </nav>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:An.goloskokov@gmail.com" data-cursor>An.goloskokov@gmail.com</a>
+        <a href="https://github.com/penkayone" target="_blank" rel="noopener" data-cursor>github.com/penkayone</a>
+        <a href="https://t.me/antongoloskokov" target="_blank" rel="noopener" data-cursor>@antongoloskokov</a>
+      </div>
+    </div>
+    <div class="foot-big" aria-hidden="true"><span>Anton</span><span>Goloskokov</span></div>
+    <div class="foot-bottom">
+      <span>© 2026 Anton Goloskokov</span>
+      <span>Based in Estonia · RU / EN</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
