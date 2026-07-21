@@ -51,6 +51,9 @@
 | Превью | Сайт | О чем |
 |:---:|---|---|
 | [<img src="docs/previews/aether-studio.jpg" width="360" alt="AETHER, превью">](other/aether-studio/) | **[AETHER](other/aether-studio/)**<br>`other/aether-studio` | Лендинг цифровой студии. В центре живой 3D-блоб на шейдерах и облако частиц, свой курсор, кинетическая типографика и анимации по скроллу. |
+| [<img src="docs/previews/aurora-studio.jpg" width="360" alt="AURORA, превью">](other/aurora-studio/) | **[AURORA](other/aurora-studio/)**<br>`other/aurora-studio` | Студия цифровых пространств. Справа сплетение объемных фигур в каркасной сфере, оно вращается и следует за курсором, а скролл ведет через проекты и подход к контакту. Чистые HTML, CSS и JS. |
+| [<img src="docs/previews/synkra-immersive.jpg" width="360" alt="SYNKRA Immersive, превью">](other/synkra-immersive/) | **[SYNKRA Immersive](other/synkra-immersive/)**<br>`other/synkra-immersive` | AI-студия, кинематографичный лендинг с лаймовым акцентом «We make digital feel alive», видео, интерактивной арт-лабораторией и формой заявки. Собран на Next.js и vinext. |
+| [<img src="docs/previews/synkra-digital.jpg" width="360" alt="SYNKRA Digital, превью">](other/synkra-digital/) | **[SYNKRA Digital](other/synkra-digital/)**<br>`other/synkra-digital` | Тот же бренд SYNKRA, но сдержанный, «сеньорный» вариант в кобальтовых тонах с переключателем настроения и генеративным видео. Тоже на Next.js и vinext. |
 
 > Категории в работе: 🔧 ремесла и услуги (`trades/`), 🏥 медицина (`medical/`), 🚗 авто (`automotive/`). Скоро наполнятся.
 
@@ -58,7 +61,7 @@
 
 Библиотеки одни и те же во всех сайтах: [Three.js](https://threejs.org/) для 3D, [GSAP и ScrollTrigger](https://gsap.com/) для анимаций по скроллу, [Lenis](https://lenis.darkroom.engineering/) для плавного скролла.
 
-**Обычные шаблоны** (авиация, еда, казино, AETHER) сделаны на чистых HTML, CSS и JS без сборщика. Библиотеки подключены с CDN прямо в `index.html`. Структура у всех одинаковая:
+**Обычные шаблоны** (авиация, еда, казино, AETHER, AURORA) сделаны на чистых HTML, CSS и JS без сборщика. Библиотеки подключены с CDN прямо в `index.html`. Структура у всех одинаковая:
 
 ```
 category/site-name/
@@ -82,6 +85,15 @@ cd 3d-sites/portfolio/cinematic-portfolio
 npm install
 npm run dev      # локальный сервер, адрес выведется в терминал
 npm run build    # сборка в dist/
+```
+
+**Сайты SYNKRA** (`other/synkra-immersive`, `other/synkra-digital`) собраны на Next.js и [vinext](https://github.com/cloudflare/vinext) (запуск под Cloudflare). Нужен Node.js `>=22.13.0`:
+
+```bash
+cd 3d-sites/other/synkra-immersive
+npm install
+npm run dev      # локальный сервер, адрес выведется в терминал
+npm run build    # сборка
 ```
 
 Внутри каждого сайта лежит свой README с пошаговым гайдом: что и где заменить на свои тексты, контакты и цвета.
@@ -125,6 +137,9 @@ These are 3D landing pages sorted by niche. Each site is its own folder with a l
 | Preview | Site | About |
 |:---:|---|---|
 | [<img src="docs/previews/aether-studio.jpg" width="360" alt="AETHER preview">](other/aether-studio/) | **[AETHER](other/aether-studio/)**<br>`other/aether-studio` | A digital studio landing. A living shader blob and a particle cloud at the center, a custom cursor, kinetic typography and scroll animations. |
+| [<img src="docs/previews/aurora-studio.jpg" width="360" alt="AURORA preview">](other/aurora-studio/) | **[AURORA](other/aurora-studio/)**<br>`other/aurora-studio` | A digital-spaces studio. A tangle of volumetric shapes in a wireframe sphere rotates and follows the cursor on the right, and scrolling leads through projects and approach to contact. Plain HTML, CSS and JS. |
+| [<img src="docs/previews/synkra-immersive.jpg" width="360" alt="SYNKRA Immersive preview">](other/synkra-immersive/) | **[SYNKRA Immersive](other/synkra-immersive/)**<br>`other/synkra-immersive` | An AI studio, a cinematic landing with a lime accent, "We make digital feel alive", video, an interactive art lab and a brief form. Built with Next.js and vinext. |
+| [<img src="docs/previews/synkra-digital.jpg" width="360" alt="SYNKRA Digital preview">](other/synkra-digital/) | **[SYNKRA Digital](other/synkra-digital/)**<br>`other/synkra-digital` | The same SYNKRA brand, but a restrained, "senior" variant in cobalt tones with a mood switcher and generative video. Also on Next.js and vinext. |
 
 > Categories in progress: 🔧 trades and services (`trades/`), 🏥 medical (`medical/`), 🚗 automotive (`automotive/`). Coming soon.
 
@@ -132,7 +147,7 @@ These are 3D landing pages sorted by niche. Each site is its own folder with a l
 
 The libraries are the same across every site: [Three.js](https://threejs.org/) for 3D, [GSAP and ScrollTrigger](https://gsap.com/) for scroll animation, [Lenis](https://lenis.darkroom.engineering/) for smooth scroll.
 
-**The plain templates** (aviation, food, casino, AETHER) are built with plain HTML, CSS and JS, no bundler. Libraries are loaded from a CDN right in `index.html`. They all share the same structure:
+**The plain templates** (aviation, food, casino, AETHER, AURORA) are built with plain HTML, CSS and JS, no bundler. Libraries are loaded from a CDN right in `index.html`. They all share the same structure:
 
 ```
 category/site-name/
@@ -156,6 +171,15 @@ cd 3d-sites/portfolio/cinematic-portfolio
 npm install
 npm run dev      # local server, the URL is printed in the terminal
 npm run build    # build into dist/
+```
+
+**The SYNKRA sites** (`other/synkra-immersive`, `other/synkra-digital`) are built with Next.js and [vinext](https://github.com/cloudflare/vinext) (running on Cloudflare). They need Node.js `>=22.13.0`:
+
+```bash
+cd 3d-sites/other/synkra-immersive
+npm install
+npm run dev      # local server, the URL is printed in the terminal
+npm run build    # build
 ```
 
 Each site has its own README with a step-by-step guide: what to change and where for your own copy, contacts and colors.
