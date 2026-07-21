@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AURORA 3D Studio</title>
+    <meta
+      name="description"
+      content="Иммерсивный 3D сайт студии цифровых пространств."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="AURORA">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AURORA</span>
+      </a>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#projects">Проекты</a>
+        <a href="#process">Подход</a>
+        <a href="#contact">Контакт</a>
+      </nav>
+      <a class="header-action" href="#contact">Обсудить</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Digital spaces / 3D identity / Motion</p>
+          <h1 id="hero-title">AURORA 3D Studio</h1>
+          <p class="hero-lead">
+            Проектируем объемные сайты, интерактивные витрины и визуальные
+            системы, которые ощущаются как живое пространство.
+          </p>
+          <div class="hero-actions" aria-label="Главные действия">
+            <a class="button primary" href="#projects">Смотреть работы</a>
+            <a class="button secondary" href="#contact">Запустить проект</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Показатели студии">
+          <div class="signal">
+            <span class="signal-line"></span>
+            <span>Realtime visual layer</span>
+          </div>
+          <dl class="metric-grid">
+            <div>
+              <dt>18</dt>
+              <dd>3D запусков</dd>
+            </div>
+            <div>
+              <dt>42%</dt>
+              <dd>выше вовлечение</dd>
+            </div>
+            <div>
+              <dt>4.8</dt>
+              <dd>средняя оценка</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="project-strip" id="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <p class="eyebrow">Selected builds</p>
+          <h2 id="projects-title">Витрины, где 3D работает на смысл</h2>
+        </div>
+        <div class="cards">
+          <article class="project-card reveal" data-tilt>
+            <span class="card-number">01</span>
+            <h3>Launch Room</h3>
+            <p>
+              Презентационная страница с вращающимся объектом продукта,
+              микродвижением и быстрыми сценариями заявки.
+            </p>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <span class="card-number">02</span>
+            <h3>Spatial Brand</h3>
+            <p>
+              3D айдентика для бренда: сцены, материалы, свет, паттерны и
+              набор интерактивных блоков для сайта.
+            </p>
+          </article>
+          <article class="project-card reveal" data-tilt>
+            <span class="card-number">03</span>
+            <h3>Data Atrium</h3>
+            <p>
+              Дашборд с объемной визуализацией показателей, адаптированный
+              для презентаций, продаж и мобильных экранов.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="process-band" id="process" aria-labelledby="process-title">
+        <div class="section-head">
+          <p class="eyebrow">Process</p>
+          <h2 id="process-title">От идеи до ощущения глубины</h2>
+        </div>
+        <div class="timeline">
+          <div class="step reveal">
+            <span>01</span>
+            <h3>Сценарий</h3>
+            <p>Находим главный жест страницы и строим вокруг него структуру.</p>
+          </div>
+          <div class="step reveal">
+            <span>02</span>
+            <h3>Материал</h3>
+            <p>Подбираем свет, фактуры, темп движения и визуальную плотность.</p>
+          </div>
+          <div class="step reveal">
+            <span>03</span>
+            <h3>Сборка</h3>
+            <p>Доводим интерфейс, адаптивность и плавность до аккуратного релиза.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div>
+        <p class="eyebrow">Start a signal</p>
+        <h2>Соберем сайт с глубиной, светом и характером.</h2>
+      </div>
+      <a class="button primary" href="mailto:hello@example.com">hello@example.com</a>
+    </footer>
+
+    <script defer src="./app.js"></script>
+  </body>
+</html>
