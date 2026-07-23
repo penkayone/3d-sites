@@ -25,7 +25,7 @@
 ### 🚀 Как запустить
 
 ```bash
-cd portfolio/cinematic-portfolio
+cd sites/cinematic-portfolio
 npm install
 npm run dev      # локальный сервер, адрес появится в терминале
 npm run build    # прод-сборка в ./dist
@@ -154,7 +154,7 @@ A single-page, scroll-driven portfolio for a Technical SEO and AI Automation eng
 ### 🚀 Run it
 
 ```bash
-cd portfolio/cinematic-portfolio
+cd sites/cinematic-portfolio
 npm install
 npm run dev      # local dev server, prints a localhost URL
 npm run build    # production build into ./dist

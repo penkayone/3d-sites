@@ -26,7 +26,7 @@
 **Вариант 1, терминал (самый простой):**
 
 ```bash
-cd other/aether-studio
+cd sites/aether-studio
 npx serve .
 ```
 
@@ -37,7 +37,7 @@ npx serve .
 **Вариант 3, Python:**
 
 ```bash
-cd other/aether-studio
+cd sites/aether-studio
 python3 -m http.server 8000
 # открыть http://localhost:8000
 ```
@@ -170,7 +170,7 @@ You need any local server, double-clicking `index.html` **will not work** (brows
 **Option 1, terminal (easiest):**
 
 ```bash
-cd other/aether-studio
+cd sites/aether-studio
 npx serve .
 ```
 
@@ -181,7 +181,7 @@ Open the address printed in the terminal (usually `http://localhost:3000`).
 **Option 3, Python:**
 
 ```bash
-cd other/aether-studio
+cd sites/aether-studio
 python3 -m http.server 8000
 # open http://localhost:8000
 ```

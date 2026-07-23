@@ -25,7 +25,7 @@
 **Вариант 1 — терминал (самый простой):**
 
 ```bash
-cd aviation/jet-charter-dawn
+cd sites/jet-charter-dawn
 npx serve .
 ```
 
@@ -37,7 +37,7 @@ npx serve .
 **Вариант 3 — Python (если есть):**
 
 ```bash
-cd aviation/jet-charter-dawn
+cd sites/jet-charter-dawn
 python3 -m http.server 8000
 # открыть http://localhost:8000
 ```
