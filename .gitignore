@@ -19,4 +19,4 @@ node_modules/
 .env.local
 
 # Исходные материалы шаблонов (черновик, не часть шаблона)
-casino/_materials/
+sites/astra-casino/_materials/

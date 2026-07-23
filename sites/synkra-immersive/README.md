@@ -27,7 +27,7 @@
 Нужен **Node.js `>=22.13.0`**.
 
 ```bash
-cd other/synkra-immersive
+cd sites/synkra-immersive
 npm install       # поставить зависимости (один раз)
 npm run dev       # локальный сервер для разработки, адрес выведется в терминал
 ```
@@ -162,7 +162,7 @@ The first screen has big typography, "We make digital feel alive", and a living 
 You need **Node.js `>=22.13.0`**.
 
 ```bash
-cd other/synkra-immersive
+cd sites/synkra-immersive
 npm install       # install dependencies (once)
 npm run dev       # local dev server, the URL is printed in the terminal
 ```

@@ -28,7 +28,7 @@
 **Вариант 1 — терминал (самый простой):**
 
 ```bash
-cd casino/astra-casino
+cd sites/astra-casino
 npx serve .
 ```
 
@@ -40,7 +40,7 @@ npx serve .
 **Вариант 3 — Python (если есть):**
 
 ```bash
-cd casino/astra-casino
+cd sites/astra-casino
 python3 -m http.server 8000
 # открыть http://localhost:8000
 ```

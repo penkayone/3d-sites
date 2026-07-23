@@ -26,7 +26,7 @@
 **Вариант 1 — терминал (самый простой):**
 
 ```bash
-cd food/fine-dining-noir
+cd sites/fine-dining-noir
 npx serve .
 ```
 
@@ -38,7 +38,7 @@ npx serve .
 **Вариант 3 — Python (если есть):**
 
 ```bash
-cd food/fine-dining-noir
+cd sites/fine-dining-noir
 python3 -m http.server 8000
 # открыть http://localhost:8000
 ```
